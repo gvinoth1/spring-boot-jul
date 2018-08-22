@@ -1,0 +1,28 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: zuul-proxy
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+      
+zuul:
+  prefix: /api
+  routes:
+    by-redirect:
+      path: /redirect/**
+      location: http://www.yahoo.co.in
+    by-client:
+      path: /client/**
+      location: hr-service
+    by-service:
+      path: /services/**
+      location: emp-service
+    by-host:
+      path: /host/**
+      location: localhost:8082
+      
