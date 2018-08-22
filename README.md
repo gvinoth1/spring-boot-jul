@@ -1,1 +1,1 @@
-# spring-boot-vdsi-jul
+# spring-boot-jul-2018
